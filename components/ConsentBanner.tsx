@@ -35,6 +35,11 @@ export function ConsentBanner() {
   useEffect(() => {
     const onHeroReady = () => setHeroReady(true);
     window.addEventListener(HERO_READY_EVENT, onHeroReady);
+
+    if (document.documentElement.dataset.klarveHeroReady === "true") {
+      setHeroReady(true);
+    }
+
     const fallback = setTimeout(() => setHeroReady(true), 14000);
     return () => {
       window.removeEventListener(HERO_READY_EVENT, onHeroReady);

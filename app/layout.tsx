@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display, Inter } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display, Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import { LenisProvider } from "@/components/LenisProvider";
 import "./globals.css";
@@ -24,6 +24,16 @@ const playfair = Playfair_Display({
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
@@ -129,7 +139,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${inter.variable} antialiased dark overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} antialiased dark overflow-x-hidden`}
       >
         <LenisProvider>
           {children}

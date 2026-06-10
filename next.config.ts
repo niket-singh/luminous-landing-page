@@ -5,6 +5,15 @@ const outputMode =
 
 const nextConfig: NextConfig = {
   output: outputMode,
+  images: {
+    unoptimized: outputMode === "export",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.klarve.ai",
+      },
+    ],
+  },
   turbopack: {
     root: __dirname,
   },
