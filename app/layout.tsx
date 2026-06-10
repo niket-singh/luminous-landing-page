@@ -6,6 +6,7 @@ import "./globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ai.klarve.com";
 const OG_IMAGE_PATH = "/og.png";
+const SITE_TITLE = "High-Paying Remote AI Training Jobs | Adzzat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +40,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Klarve | Frontier AI Data for Foundation Models",
+  title: SITE_TITLE,
   description:
     "Expert-curated datasets for complex reasoning and agentic workflows. Pipeline-ready data for Y-Combinator backed labs—RLHF, SFT, agentic traces, and simulation environments. DPDP compliant.",
   keywords: [
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "Klarve",
-    title: "Klarve | Frontier AI Data for Foundation Models",
+    title: SITE_TITLE,
     description:
       "Expert-curated datasets for complex reasoning and agentic workflows. Pipeline-ready data for YC-backed labs—RLHF, SFT, agentic traces, simulation. DPDP compliant.",
     images: [
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Klarve | Frontier AI Data for Foundation Models",
+    title: SITE_TITLE,
     description:
       "Expert-curated datasets for complex reasoning and agentic workflows. Pipeline-ready data for YC-backed labs. DPDP compliant.",
     images: [OG_IMAGE_PATH.startsWith("http") ? OG_IMAGE_PATH : `${SITE_URL}${OG_IMAGE_PATH}`],
