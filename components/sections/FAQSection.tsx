@@ -26,7 +26,7 @@ export function FAQSection({ items }: FAQSectionProps) {
           </h2>
           <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
             Have questions? We have answers. Browse our most common inquiries
-            about how Klarve supports frontier AI teams.
+            about how AdzzatLabs supports frontier AI teams.
           </p>
         </div>
 

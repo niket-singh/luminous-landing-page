@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const STORAGE_KEY = "klarve-dpdp-consent";
-const HERO_READY_EVENT = "klarve-hero-ready";
+const STORAGE_KEY = "adzzatlabs-dpdp-consent";
+const HERO_READY_EVENT = "adzzatlabs-hero-ready";
 export type ConsentLevel = "all" | "essential" | null;
 
 function getStoredConsent(): ConsentLevel {
@@ -36,7 +36,7 @@ export function ConsentBanner() {
     const onHeroReady = () => setHeroReady(true);
     window.addEventListener(HERO_READY_EVENT, onHeroReady);
 
-    if (document.documentElement.dataset.klarveHeroReady === "true") {
+    if (document.documentElement.dataset.adzzatlabsHeroReady === "true") {
       setHeroReady(true);
     }
 

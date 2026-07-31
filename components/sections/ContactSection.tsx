@@ -23,7 +23,7 @@ type ContactSectionProps = {
 export function ContactSection({
   title = "We can turn your frontier AI roadmap into reality",
   mainMessage = "Contact our team",
-  contactEmail = "contact@klarve.ai",
+  contactEmail = "contact@adzzat.com",
   onSubmit,
 }: ContactSectionProps) {
   const [formData, setFormData] = React.useState<ContactFormData>({
@@ -63,7 +63,7 @@ export function ContactSection({
     };
 
     try {
-      // Send email (from contact@klarve.ai, CC to team) via our API
+      // Send email (from contact@adzzat.com, CC to team) via our API
       const emailRes = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -312,7 +312,7 @@ export function ContactSection({
                   className="mt-0.5 h-4 w-4 rounded border-slate-300 text-(--brand) focus:ring-(--brand)"
                 />
                 <span>
-                  I consent to Klarve collecting and using my personal data for
+                  I consent to AdzzatLabs collecting and using my personal data for
                   the purpose of responding to my inquiry, in accordance with
                   the Privacy Policy.
                 </span>

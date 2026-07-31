@@ -1,22 +1,22 @@
-import { KlarveLandingPage } from "@/components/revamp/KlarveLandingPage";
+import { AdzzatLabsLandingPage } from "@/components/revamp/AdzzatLabsLandingPage";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ai.klarve.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://adzzatlabs.com";
 
 export default function Home() {
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "Klarve",
+      name: "AdzzatLabs",
       url: SITE_URL,
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Klarve frontier AI data pipelines",
+      name: "AdzzatLabs frontier AI data pipelines",
       provider: {
         "@type": "Organization",
-        name: "Klarve",
+        name: "AdzzatLabs",
         url: SITE_URL,
       },
       areaServed: "Global",
@@ -35,7 +35,7 @@ export default function Home() {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <KlarveLandingPage />
+      <AdzzatLabsLandingPage />
     </>
   );
 }

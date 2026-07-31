@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Klarve",
+  title: "Privacy Policy | AdzzatLabs",
   description:
-    "How Klarve handles your data. Learn about the information we collect, how we use it, and your choices regarding your personal data.",
+    "How AdzzatLabs handles your data. Learn about the information we collect, how we use it, and your choices regarding your personal data.",
   alternates: {
     canonical: "/privacy",
   },
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
             className="text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.1] tracking-tight"
             style={{ fontFamily: "var(--font-geist-sans)" }}
           >
-            How Klarve handles your data.
+            How AdzzatLabs handles your data.
           </h1>
           <p
             className="max-w-2xl text-sm leading-relaxed text-white/75 md:text-base"
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
             </h2>
             <p style={{ fontFamily: "var(--font-inter)" }}>
               We use contact information to respond to inquiries, schedule
-              conversations, and share relevant information about Klarve&apos;s products
+              conversations, and share relevant information about AdzzatLabs&apos;s products
               and services. Usage metadata helps us improve the website, debug issues,
               and prioritize future product work.
             </p>
@@ -95,10 +95,10 @@ export default function PrivacyPage() {
               If you&apos;d like to access, correct, or delete information we hold about
               you, please reach out to{" "}
               <a
-                href="mailto:contact@klarve.ai"
+                href="mailto:contact@adzzat.com"
                 className="text-(--brand) underline-offset-4 hover:underline"
               >
-                contact@klarve.ai
+                contact@adzzat.com
               </a>
               . We&apos;ll do our best to respond promptly, subject to applicable legal
               requirements.
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
               5. Changes to this policy
             </h2>
             <p style={{ fontFamily: "var(--font-inter)" }}>
-              As Klarve grows, this policy will be updated to reflect new products,
+              As AdzzatLabs grows, this policy will be updated to reflect new products,
               regions, and regulatory expectations. When we make material changes, we
               will update the effective date and, where appropriate, surface a clear
               notice on the site.

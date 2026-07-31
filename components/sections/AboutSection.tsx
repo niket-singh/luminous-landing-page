@@ -10,21 +10,21 @@ const TEAM = [
     name: "Aryan Honawar",
     role: "CEO & Co‑Founder",
     bio: "Visionary leader driving AI innovation and data excellence.",
-    email: "aryanhonawar@klarve.ai",
+    email: "aryanhonawar@adzzatlabs.com",
     image: "/aryan.jpeg",
   },
   {
     name: "Nabeel",
     role: "COO & Co‑Founder",
     bio: "Operations expert ensuring seamless delivery and scalability.",
-    email: "nabeel@klarve.ai",
+    email: "nabeel@adzzatlabs.com",
     image: "/nabeel.jpeg",
   },
   {
     name: "Eshu",
     role: "CTO",
-    bio: "Founding technical leader architecting Klarve’s frontier data and infrastructure stack.",
-    email: "eshu@klarve.ai",
+    bio: "Founding technical leader architecting AdzzatLabs’s frontier data and infrastructure stack.",
+    email: "eshu@adzzatlabs.com",
     image: "/eshu.jpg",
   },
 ];
@@ -134,7 +134,7 @@ export function AboutSection() {
               y: contentTransforms.titleY,
             }}
           >
-            Operating layer for Klarve&apos;s frontier data engine.
+            Operating layer for AdzzatLabs&apos;s frontier data engine.
           </motion.h2>
           <motion.p
             className="mt-5 max-w-xl text-sm text-white/80 md:text-base"
@@ -145,7 +145,7 @@ export function AboutSection() {
             }}
           >
             A lean founding team combining institutional ops, product, and deep
-            engineering experience—responsible for how Klarve sources, vets, and
+            engineering experience—responsible for how AdzzatLabs sources, vets, and
             ships institutional‑grade datasets.
           </motion.p>
         </div>

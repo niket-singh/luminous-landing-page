@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const FROM_EMAIL = "contact@klarve.ai";
+const FROM_EMAIL = "contact@adzzat.com";
 const CC_EMAILS = [
-  "nabeel@klarve.ai",
-  "aryanhonawar@klarve.ai",
-  "eshu@klarve.ai",
+  "nabeel@adzzatlabs.com",
+  "aryanhonawar@adzzatlabs.com",
+  "eshu@adzzatlabs.com",
 ];
 
 type ContactBody = {
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
   try {
     // Internal notification (to team, CC)
     await transporter.sendMail({
-      from: `"Klarve Contact" <${FROM_EMAIL}>`,
+      from: `"AdzzatLabs Contact" <${FROM_EMAIL}>`,
       to: FROM_EMAIL,
       cc: CC_EMAILS,
       replyTo: email,
@@ -97,13 +97,13 @@ export async function POST(request: Request) {
 
     // Confirmation email to the person who submitted the form
     await transporter.sendMail({
-      from: `"Klarve" <${FROM_EMAIL}>`,
+      from: `"AdzzatLabs" <${FROM_EMAIL}>`,
       to: email,
-      subject: "Thanks for reaching out to Klarve",
+      subject: "Thanks for reaching out to AdzzatLabs",
       text: [
         `Hi ${firstName || "there"},`,
         "",
-        "Thanks for contacting Klarve. We've received your details and someone from the team will follow up shortly.",
+        "Thanks for contacting AdzzatLabs. We've received your details and someone from the team will follow up shortly.",
         "",
         "Summary of what you shared:",
         `• Name: ${firstName} ${lastName}`.trim(),
@@ -114,7 +114,7 @@ export async function POST(request: Request) {
         "",
         "If anything is missing or you'd like to share more context, you can simply reply to this email.",
         "",
-        "— Klarve team",
+        "— AdzzatLabs team",
       ].join("\n"),
     });
   } catch (err) {

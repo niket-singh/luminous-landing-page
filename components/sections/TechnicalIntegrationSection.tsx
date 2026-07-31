@@ -31,7 +31,7 @@ function TerminalWindow() {
         <div className="text-[#6b7280]">{"# Pipeline-ready: your schema, zero cleaning"}</div>
         <div className="mt-2">
           <span className="text-[#c084fc]">from</span>
-          <span className="text-white"> klarve </span>
+          <span className="text-white"> adzzatlabs </span>
           <span className="text-[#c084fc]">import</span>
           <span className="text-white"> load_dataset</span>
         </div>

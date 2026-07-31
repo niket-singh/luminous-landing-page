@@ -4,7 +4,7 @@ import { ConsentBanner } from "@/components/ConsentBanner";
 import { LenisProvider } from "@/components/LenisProvider";
 import "./globals.css";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ai.klarve.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://adzzatlabs.com";
 const OG_IMAGE_PATH = "/og.png";
 const SITE_TITLE = "High-Paying Remote AI Training Jobs | Adzzat";
 
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     "RLHF",
     "agentic workflows",
     "ML data",
-    "Klarve",
+    "AdzzatLabs",
   ],
-  authors: [{ name: "Klarve" }],
+  authors: [{ name: "AdzzatLabs" }],
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "Klarve",
+    siteName: "AdzzatLabs",
     title: SITE_TITLE,
     description:
       "Expert-curated datasets for complex reasoning and agentic workflows. Pipeline-ready data for YC-backed labs—RLHF, SFT, agentic traces, simulation. DPDP compliant.",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE_PATH.startsWith("http") ? OG_IMAGE_PATH : `${SITE_URL}${OG_IMAGE_PATH}`,
         width: 1200,
         height: 630,
-        alt: "Klarve - Frontier AI Data",
+        alt: "AdzzatLabs - Frontier AI Data",
       },
     ],
     locale: "en_IN",
@@ -124,15 +124,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Klarve",
+              name: "AdzzatLabs",
               url: SITE_URL,
-              logo: `${SITE_URL}/klarve-ai.png`,
+              logo: `${SITE_URL}/adzzat-logo.png`,
               description:
                 "Expert-curated datasets for complex reasoning and agentic workflows. Pipeline-ready data for frontier AI labs.",
-              sameAs: ["https://www.linkedin.com/company/klarve/"],
+              sameAs: ["https://www.linkedin.com/company/adzzatlabs/"],
               contactPoint: {
                 "@type": "ContactPoint",
-                email: "contact@klarve.ai",
+                email: "contact@adzzat.com",
                 contactType: "sales",
               },
             }),

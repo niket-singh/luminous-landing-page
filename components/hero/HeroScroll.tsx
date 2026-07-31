@@ -11,7 +11,7 @@ export function HeroScroll() {
 
   // Signal consent banner that hero is ready
   useEffect(() => {
-    window.dispatchEvent(new CustomEvent("klarve-hero-ready"));
+    window.dispatchEvent(new CustomEvent("adzzatlabs-hero-ready"));
   }, []);
 
   return (

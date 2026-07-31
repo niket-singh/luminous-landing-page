@@ -35,9 +35,9 @@ const drawPath = {
 
 const CONTACT_HREF = "/contact";
 
-export function KlarveLandingPage() {
+export function AdzzatLabsLandingPage() {
   return (
-    <div className="klarve-revamp">
+    <div className="adzzatlabs-revamp">
       <MotionConfig reducedMotion="user">
         <Nav />
         <main>
@@ -100,7 +100,7 @@ function Nav() {
       <motion.div className="progress" style={{ scaleX: scrollYProgress }} />
       <nav className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="revamp-container nav-inner">
-          <a href="#top" className="logo" aria-label="Klarve home">
+          <a href="#top" className="logo" aria-label="AdzzatLabs home">
             <LogoMark />
           </a>
           <div className="nav-links">
@@ -152,8 +152,8 @@ function Hero() {
   const finePointer = useFinePointer();
 
   useEffect(() => {
-    document.documentElement.dataset.klarveHeroReady = "true";
-    window.dispatchEvent(new CustomEvent("klarve-hero-ready"));
+    document.documentElement.dataset.adzzatlabsHeroReady = "true";
+    window.dispatchEvent(new CustomEvent("adzzatlabs-hero-ready"));
   }, []);
   const mx = useMotionValue(0.5);
   const my = useMotionValue(0.5);
@@ -351,7 +351,7 @@ function HeroBg() {
             <text
               x="10"
               y="4"
-              fontFamily="var(--font-klarve-mono), monospace"
+              fontFamily="var(--font-adzzatlabs-mono), monospace"
               fontSize="11"
               fill="rgba(235,238,248,.4)"
             >
@@ -388,7 +388,7 @@ function CoreMark() {
       </g>
       <path id="orbitA" d="M200,40 A160,160 0 1 1 199.9,40" fill="none" />
       <path id="orbitB" d="M200,80 A120,120 0 1 0 199.9,80" fill="none" />
-      <g fontFamily="var(--font-klarve-mono), monospace" fontSize="11" fill="rgba(235,238,248,.5)">
+      <g fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="11" fill="rgba(235,238,248,.5)">
         <g>
           <circle r="3.5" fill="#c084fc" />
           <text x="9" y="4">traces</text>
@@ -533,10 +533,10 @@ function EngineVis({ finePointer }: { finePointer: boolean }) {
             style={{ transition: "fill .3s, stroke .3s" }}
           />
           <circle cx="28" cy={input.y + 22} r="4" fill={input.color} />
-          <text x="42" y={input.y + 19} fontFamily="var(--font-klarve-mono), monospace" fontSize="11" fill="rgba(235,238,248,.8)">
+          <text x="42" y={input.y + 19} fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="11" fill="rgba(235,238,248,.8)">
             {input.label}
           </text>
-          <text x="42" y={input.y + 34} fontFamily="var(--font-klarve-mono), monospace" fontSize="9" fill="rgba(235,238,248,.38)">
+          <text x="42" y={input.y + 34} fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="9" fill="rgba(235,238,248,.38)">
             {input.sub}
           </text>
         </g>
@@ -572,22 +572,22 @@ function EngineVis({ finePointer }: { finePointer: boolean }) {
             <mpath href="#wout" />
           </animateMotion>
         </g>
-        <text x="495" y="222" textAnchor="middle" fontFamily="var(--font-klarve-mono), monospace" fontSize="9" fill="rgba(235,238,248,.45)">
+        <text x="495" y="222" textAnchor="middle" fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="9" fill="rgba(235,238,248,.45)">
           model-ready
         </text>
-        <text x="495" y="234" textAnchor="middle" fontFamily="var(--font-klarve-mono), monospace" fontSize="9" fill="rgba(235,238,248,.45)">
+        <text x="495" y="234" textAnchor="middle" fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="9" fill="rgba(235,238,248,.45)">
           batches
         </text>
       </g>
 
-      <text x="395" y="392" textAnchor="middle" fontFamily="var(--font-klarve-mono), monospace" fontSize="11.5" letterSpacing="3" fill="rgba(235,238,248,.4)">
-        KLARVE DATA ENGINE
+      <text x="395" y="392" textAnchor="middle" fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="11.5" letterSpacing="3" fill="rgba(235,238,248,.4)">
+        ADZZATLABS DATA ENGINE
       </text>
       <text
         x="395"
         y="418"
         textAnchor="middle"
-        fontFamily="var(--font-klarve-mono), monospace"
+        fontFamily="var(--font-adzzatlabs-mono), monospace"
         fontSize="10"
         fill={hover === null ? "rgba(235,238,248,.3)" : "#c084fc"}
         style={{ transition: "fill .3s" }}
@@ -760,7 +760,7 @@ function Chart() {
         <line x1="40" y1="102.5" x2="500" y2="102.5" strokeDasharray="3 6" />
         <line x1="40" y1="40" x2="500" y2="40" strokeDasharray="3 6" />
       </g>
-      <g fontFamily="var(--font-klarve-mono), monospace" fontSize="10" fill="rgba(235,238,248,.35)">
+      <g fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="10" fill="rgba(235,238,248,.35)">
         <text x="36" y="294" textAnchor="end">
           0
         </text>
@@ -787,7 +787,7 @@ function Chart() {
         viewport={viewport}
         transition={{ duration: 0.8, delay: 1.2 }}
       />
-      <text x="338" y="60" fontFamily="var(--font-klarve-mono), monospace" fontSize="10.5" fill="rgba(255,120,120,.8)" letterSpacing="1.5">
+      <text x="338" y="60" fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="10.5" fill="rgba(255,120,120,.8)" letterSpacing="1.5">
         SYNTHETIC WALL
       </text>
 
@@ -795,7 +795,7 @@ function Chart() {
       <motion.path ref={humRef} d={HUM_D} fill="none" stroke="url(#riseGrad)" strokeWidth="3" strokeLinecap="round" variants={drawPath} initial="hidden" whileInView="show" viewport={viewport} />
       <motion.path d={`${HUM_D} L495,290 L40,290 Z`} fill="url(#riseFill)" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={viewport} transition={{ duration: 1.2, delay: 1.4 }} />
 
-      <motion.g fontFamily="var(--font-klarve-mono), monospace" fontSize="10" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={viewport} transition={{ delay: 1.6 }}>
+      <motion.g fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="10" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={viewport} transition={{ delay: 1.6 }}>
         <circle cx="495" cy="52" r="5" fill="#c084fc">
           <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
         </circle>
@@ -808,7 +808,7 @@ function Chart() {
       </motion.g>
 
       {cx !== null && synY !== null && humY !== null && (
-        <g fontFamily="var(--font-klarve-mono), monospace" fontSize="10.5">
+        <g fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="10.5">
           <line x1={cx} y1="40" x2={cx} y2="290" stroke="rgba(255,255,255,.18)" strokeWidth="1" />
           <circle cx={cx} cy={humY} r="4.5" fill="#c084fc" stroke="#04060f" strokeWidth="1.5" />
           <circle cx={cx} cy={synY} r="4.5" fill="rgb(148,163,196)" stroke="#04060f" strokeWidth="1.5" />
@@ -961,7 +961,7 @@ function Chip({ title, desc, icon }: { title: string; desc: string; icon: ReactN
 function PillarVis({ index }: { index: number }) {
   const visuals = [
     <svg viewBox="0 0 380 240" key="traces">
-      <g fontFamily="var(--font-klarve-mono), monospace" fontSize="10" fill="rgba(235,238,248,.4)">
+      <g fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="10" fill="rgba(235,238,248,.4)">
         {["cd src/", "vim agent.py", "pytest -q", "git commit"].map((cmd, itemIndex) => (
           <g key={cmd}>
             <rect x="20" y={28 + itemIndex * 50} width="340" height="34" rx="8" fill="rgba(255,255,255,.025)" stroke="rgba(255,255,255,.1)" />
@@ -980,7 +980,7 @@ function PillarVis({ index }: { index: number }) {
     <svg viewBox="0 0 380 240" key="rlhf">
       <rect x="24" y="40" width="150" height="120" rx="10" fill="rgba(129,140,248,.06)" stroke="rgba(129,140,248,.4)" />
       <rect x="206" y="40" width="150" height="120" rx="10" fill="rgba(192,132,252,.1)" stroke="#c084fc" strokeWidth="1.6" />
-      <g fontFamily="var(--font-klarve-mono), monospace" fontSize="11" fill="rgba(235,238,248,.5)">
+      <g fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="11" fill="rgba(235,238,248,.5)">
         <text x="99" y="66" textAnchor="middle">
           RESPONSE A
         </text>
@@ -996,7 +996,7 @@ function PillarVis({ index }: { index: number }) {
       ))}
       <circle cx="281" cy="186" r="16" fill="rgba(192,132,252,.15)" stroke="#c084fc" />
       <path d="M274 186l5 5 9-10" stroke="#c084fc" strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      <text x="99" y="191" textAnchor="middle" fontFamily="var(--font-klarve-mono), monospace" fontSize="10" fill="rgba(235,238,248,.35)">
+      <text x="99" y="191" textAnchor="middle" fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="10" fill="rgba(235,238,248,.35)">
         rejected
       </text>
     </svg>,
@@ -1004,12 +1004,12 @@ function PillarVis({ index }: { index: number }) {
       {["Parse the problem constraints", "Select data structures", "Derive the algorithm", "Verify edge cases"].map((step, itemIndex) => (
         <g key={step}>
           <circle cx="50" cy={40 + itemIndex * 54} r="13" fill="rgba(192,132,252,.12)" stroke="#c084fc" />
-          <text x="50" y={44 + itemIndex * 54} textAnchor="middle" fontFamily="var(--font-klarve-mono), monospace" fontSize="11" fill="#e9d5ff">
+          <text x="50" y={44 + itemIndex * 54} textAnchor="middle" fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="11" fill="#e9d5ff">
             {itemIndex + 1}
           </text>
           {itemIndex < 3 && <path d={`M50,${53 + itemIndex * 54} L50,${27 + (itemIndex + 1) * 54}`} stroke="rgba(192,132,252,.4)" strokeWidth="1.4" />}
           <rect x="84" y={26 + itemIndex * 54} width="264" height="28" rx="8" fill="rgba(255,255,255,.025)" stroke="rgba(255,255,255,.1)" />
-          <text x="98" y={44 + itemIndex * 54} fontFamily="var(--font-klarve-mono), monospace" fontSize="11" fill={itemIndex === 3 ? "#4ade80" : "rgba(235,238,248,.6)"}>
+          <text x="98" y={44 + itemIndex * 54} fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="11" fill={itemIndex === 3 ? "#4ade80" : "rgba(235,238,248,.6)"}>
             {step}
           </text>
         </g>
@@ -1017,7 +1017,7 @@ function PillarVis({ index }: { index: number }) {
     </svg>,
     <svg viewBox="0 0 380 240" key="sim">
       <rect x="40" y="30" width="300" height="180" rx="14" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.12)" />
-      <g fontFamily="var(--font-klarve-mono), monospace" fontSize="10.5">
+      <g fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="10.5">
         <rect x="64" y="56" width="120" height="56" rx="9" fill="rgba(129,140,248,.08)" stroke="rgba(129,140,248,.45)" />
         <text x="124" y="80" textAnchor="middle" fill="#a5b4fc">
           repo.git
@@ -1179,7 +1179,7 @@ function Funnel() {
       fill: "rgba(192,132,252,.1)",
       stroke: "#c084fc",
       t1: "TOP 1%",
-      t2: "KLARVE EXPERTS",
+      t2: "ADZZATLABS EXPERTS",
       y: 298,
       fs: 12,
       ls: 0.4,
@@ -1188,7 +1188,7 @@ function Funnel() {
 
   return (
     <svg viewBox="0 0 440 420">
-      <g fontFamily="var(--font-klarve-mono), monospace">
+      <g fontFamily="var(--font-adzzatlabs-mono), monospace">
         {stages.map((stage, index) => (
           <motion.g key={stage.t1} initial={{ opacity: 0, y: -16 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ scale: 1.04 }} viewport={{ once: true }} transition={{ duration: 0.7, ease: EASE, delay: 0.3 + index * 0.35 }} style={{ transformBox: "fill-box", transformOrigin: "center", cursor: "default" }}>
             <path d={stage.d} fill={stage.fill} stroke={stage.stroke} strokeWidth={index === 2 ? 1.6 : 1.4} />
@@ -1263,7 +1263,7 @@ const CODE_LINES: readonly (readonly [string, string][])[] = [
   [["cm", "# Pipeline-ready: your schema, zero cleaning"]],
   [
     ["kw", "from"],
-    ["pl", " klarve "],
+    ["pl", " adzzatlabs "],
     ["kw", "import"],
     ["pl", " load_dataset"],
   ],
@@ -1388,20 +1388,20 @@ const TEAM = [
   {
     name: "Aryan Honawar",
     role: "CEO & Co-Founder",
-    email: "aryanhonawar@klarve.ai",
-    photo: "https://www.klarve.ai/aryan.jpeg",
+    email: "aryanhonawar@adzzatlabs.com",
+    photo: "https://www.adzzatlabs.com/aryan.jpeg",
   },
   {
     name: "Nabeel",
     role: "COO & Co-Founder",
-    email: "nabeel@klarve.ai",
-    photo: "https://www.klarve.ai/nabeel.jpeg",
+    email: "nabeel@adzzatlabs.com",
+    photo: "https://www.adzzatlabs.com/nabeel.jpeg",
   },
   {
     name: "Eshu",
     role: "CTO",
-    email: "eshu@klarve.ai",
-    photo: "https://www.klarve.ai/eshu.jpg",
+    email: "eshu@adzzatlabs.com",
+    photo: "https://www.adzzatlabs.com/eshu.jpg",
   },
 ] as const;
 
@@ -1420,7 +1420,7 @@ function Team() {
               <Image
                 className="team-avatar"
                 src={member.photo}
-                alt={`${member.name}, ${member.role} at Klarve`}
+                alt={`${member.name}, ${member.role} at AdzzatLabs`}
                 width={128}
                 height={128}
                 sizes="64px"
@@ -1469,7 +1469,7 @@ function Cta() {
             {packets.map(([path, dur, begin, color, label]) => (
               <g key={path}>
                 <circle r="2.8" fill={color} />
-                <text x="9" y="4" fontFamily="var(--font-klarve-mono), monospace" fontSize="10" fill="rgba(235,238,248,.35)">
+                <text x="9" y="4" fontFamily="var(--font-adzzatlabs-mono), monospace" fontSize="10" fill="rgba(235,238,248,.35)">
                   {label}
                 </text>
                 <animateMotion dur={dur} begin={begin} repeatCount="indefinite">
@@ -1506,7 +1506,7 @@ function RevampFooter() {
       <div className="revamp-container">
         <div className="foot-grid">
           <div className="foot-brand">
-            <a href="#top" className="logo" aria-label="Klarve home">
+            <a href="#top" className="logo" aria-label="AdzzatLabs home">
               <LogoMark />
             </a>
             <p>Expert-curated evaluation and training data for foundation models.</p>
@@ -1522,16 +1522,16 @@ function RevampFooter() {
           </div>
           <div className="foot-col">
             <h4>Company</h4>
-            <a href="https://www.linkedin.com/company/klarve/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/adzzatlabs/" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href="mailto:contact@klarve.ai">contact@klarve.ai</a>
+            <a href="mailto:contact@adzzat.com">contact@adzzat.com</a>
             <a href="/privacy">Privacy policy</a>
             <a href="/terms">Terms &amp; conditions</a>
           </div>
         </div>
         <div className="foot-bottom">
-          <span>© 2026 Klarve. All rights reserved.</span>
+          <span>© 2026 AdzzatLabs. All rights reserved.</span>
           <span>Built for frontier AI teams that need high-signal human data.</span>
         </div>
       </div>
@@ -1543,7 +1543,7 @@ function LogoMark() {
   return (
     <Image
       src="/nobg.png"
-      alt="Klarve"
+      alt="AdzzatLabs"
       width={170}
       height={52}
       priority

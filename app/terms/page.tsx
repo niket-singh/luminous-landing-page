@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Klarve",
+  title: "Terms & Conditions | AdzzatLabs",
   description:
-    "Terms and conditions for using the Klarve website. Learn about acceptable use, intellectual property, and our policies.",
+    "Terms and conditions for using the AdzzatLabs website. Learn about acceptable use, intellectual property, and our policies.",
   alternates: {
     canonical: "/terms",
   },
@@ -24,7 +24,7 @@ export default function TermsPage() {
             className="text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.1] tracking-tight"
             style={{ fontFamily: "var(--font-geist-sans)" }}
           >
-            Use of the Klarve website.
+            Use of the AdzzatLabs website.
           </h1>
           <p
             className="max-w-2xl text-sm leading-relaxed text-white/75 md:text-base"
@@ -45,9 +45,9 @@ export default function TermsPage() {
               1. Informational purpose only
             </h2>
             <p style={{ fontFamily: "var(--font-inter)" }}>
-              The Klarve website is provided for general information about our company
+              The AdzzatLabs website is provided for general information about our company
               and services. Nothing on this site constitutes an offer, commitment, or
-              guarantee of service. Any commercial engagement with Klarve will be
+              guarantee of service. Any commercial engagement with AdzzatLabs will be
               governed by a separate written agreement.
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function TermsPage() {
             </h2>
             <p style={{ fontFamily: "var(--font-inter)" }}>
               All content on this site—including copy, visuals, and branding—is owned by
-              or licensed to Klarve and protected by applicable intellectual property
+              or licensed to AdzzatLabs and protected by applicable intellectual property
               laws. You may not reuse, modify, or redistribute this content without our
               prior written consent, except for fair use or as otherwise permitted by
               law.
@@ -109,10 +109,10 @@ export default function TermsPage() {
               If you have questions about these sample terms or would like to discuss a
               formal engagement, please reach out to{" "}
               <a
-                href="mailto:contact@klarve.ai"
+                href="mailto:contact@adzzat.com"
                 className="text-(--brand) underline-offset-4 hover:underline"
               >
-                contact@klarve.ai
+                contact@adzzat.com
               </a>
               .
             </p>
