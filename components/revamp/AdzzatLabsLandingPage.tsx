@@ -58,7 +58,7 @@ export function AdzzatLabsLandingPage() {
   );
 }
 
-function Nav() {
+export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -89,10 +89,10 @@ function Nav() {
   }, [open]);
 
   const links = [
-    ["#capabilities", "Capabilities"],
-    ["#layers", "Stack"],
-    ["#human", "Approach"],
-    ["#team", "Team"],
+    ["/#capabilities", "Capabilities"],
+    ["/#layers", "Stack"],
+    ["/datasets", "Datasets"],
+    ["/#team", "Team"],
   ] as const;
 
   return (
@@ -100,7 +100,7 @@ function Nav() {
       <motion.div className="progress" style={{ scaleX: scrollYProgress }} />
       <nav className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="revamp-container nav-inner">
-          <a href="#top" className="logo" aria-label="AdzzatLabs home">
+          <a href="/#top" className="logo" aria-label="AdzzatLabs home">
             <LogoMark />
           </a>
           <div className="nav-links">
@@ -1500,13 +1500,13 @@ function Cta() {
   );
 }
 
-function RevampFooter() {
+export function RevampFooter() {
   return (
     <footer>
       <div className="revamp-container">
         <div className="foot-grid">
           <div className="foot-brand">
-            <a href="#top" className="logo" aria-label="AdzzatLabs home">
+            <a href="/#top" className="logo" aria-label="AdzzatLabs home">
               <LogoMark />
             </a>
             <p>Expert-curated evaluation and training data for foundation models.</p>
@@ -1514,10 +1514,10 @@ function RevampFooter() {
           </div>
           <div className="foot-col">
             <h4>Navigation</h4>
-            <a href="#top">Home</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#layers">Stack</a>
-            <a href="#team">Team</a>
+            <a href="/#top">Home</a>
+            <a href="/#capabilities">Capabilities</a>
+            <a href="/datasets">Datasets</a>
+            <a href="/#team">Team</a>
             <a href={CONTACT_HREF}>Contact</a>
           </div>
           <div className="foot-col">
