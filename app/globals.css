@@ -2129,8 +2129,8 @@
   }
 }
 /* Datasets catalogue page */
-.adzzatlabs-revamp .ds-head {
-  padding-top: 170px;
+.adzzatlabs-revamp section.ds-head {
+  padding: 180px 0 28px;
 }
 
 .adzzatlabs-revamp .ds-head h1 {
@@ -2421,7 +2421,7 @@
 }
 
 @media (max-width: 640px) {
-  .adzzatlabs-revamp .ds-head {
+  .adzzatlabs-revamp section.ds-head {
     padding-top: 140px;
   }
 

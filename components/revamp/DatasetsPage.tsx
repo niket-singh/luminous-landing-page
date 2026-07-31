@@ -249,7 +249,7 @@ export function DatasetsPage() {
 
 function DatasetsHero() {
   return (
-    <section className="ds-head tight-section">
+    <section className="ds-head">
       <div className="revamp-container">
         <motion.div variants={fadeUp} initial="hidden" animate="show">
           <div className="eyebrow">
