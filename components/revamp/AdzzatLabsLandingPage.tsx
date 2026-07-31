@@ -1542,9 +1542,9 @@ export function RevampFooter() {
 function LogoMark() {
   return (
     <Image
-      src="/nobg.png"
+      src="/adzzat-logo.png"
       alt="AdzzatLabs"
-      width={170}
+      width={166}
       height={52}
       priority
       unoptimized
