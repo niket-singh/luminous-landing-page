@@ -2429,3 +2429,39 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Co-branded partner strip on datasets page */
+.adzzatlabs-revamp .ds-partners {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  margin-top: 42px;
+}
+
+.adzzatlabs-revamp .ds-partners-label {
+  color: var(--revamp-text-3);
+  font-family: var(--font-adzzatlabs-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.adzzatlabs-revamp .ds-partners-logos {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.adzzatlabs-revamp .ds-partners-logos img {
+  filter: invert(1) grayscale(1);
+  height: 30px;
+  mix-blend-mode: screen;
+  opacity: 0.75;
+  transition: opacity 0.3s;
+  width: auto;
+}
+
+.adzzatlabs-revamp .ds-partners-logos img:hover {
+  opacity: 1;
+}

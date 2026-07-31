@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { Nav, RevampFooter } from "./AdzzatLabsLandingPage";
@@ -266,6 +267,18 @@ function DatasetsHero() {
             and industrial environments. Off-the-shelf packs ship today; custom collections
             are scoped to your embodiment.
           </p>
+          <div className="ds-partners">
+            <span className="ds-partners-label">CO-BRANDED OTS DATA WITH</span>
+            <div className="ds-partners-logos">
+              <Image
+                src="/partners/service-robot-co.png"
+                alt="Service Robot Co."
+                width={206}
+                height={32}
+              />
+              <Image src="/partners/merit-data.png" alt="Merit Data" width={96} height={32} />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
