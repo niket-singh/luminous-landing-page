@@ -8,27 +8,30 @@ const CC_EMAILS = [
   "eshu@adzzatlabs.com",
 ];
 
-type ContactBody = {
-  firstName: string;
-  lastName: string;
+interface ContactBody {
+  name: string;
   email: string;
-  mobile: string;
   company: string;
-  serviceType: string;
+  role: string;
+  challenge: string;
+  message: string;
   consent: boolean;
-};
+}
+
+/** Fields that must be present and non-empty. `message` is optional. */
+const REQUIRED_FIELDS = ["name", "email", "company", "role", "challenge"] as const;
 
 function buildEmailBody(data: ContactBody): string {
   return [
-    "New contact form submission",
+    "New enquiry from the Get started form",
     "",
     "---",
-    `First name: ${data.firstName}`,
-    `Last name: ${data.lastName}`,
+    `Name: ${data.name}`,
     `Email: ${data.email}`,
-    `Mobile: ${data.mobile}`,
     `Company: ${data.company}`,
-    `Engagement type: ${data.serviceType}`,
+    `Role: ${data.role}`,
+    `Current challenge: ${data.challenge}`,
+    `Message: ${data.message || "(none)"}`,
     `Consent: ${data.consent ? "Yes" : "No"}`,
     "---",
   ].join("\n");
@@ -38,36 +41,21 @@ export async function POST(request: Request) {
   const appPassword = process.env.CONTACT_EMAIL_APP_PASSWORD;
   if (!appPassword?.trim()) {
     console.error("CONTACT_EMAIL_APP_PASSWORD is not set");
-    return NextResponse.json(
-      { error: "Email not configured" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Email not configured" }, { status: 500 });
   }
 
   let body: ContactBody;
   try {
     body = (await request.json()) as ContactBody;
   } catch {
-    return NextResponse.json(
-      { error: "Invalid JSON body" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
-  const { firstName, lastName, email, mobile, company, serviceType, consent } =
-    body;
-  if (
-    !firstName ||
-    !lastName ||
-    !email ||
-    !mobile ||
-    !company ||
-    !serviceType ||
-    typeof consent !== "boolean"
-  ) {
+  const missing = REQUIRED_FIELDS.filter((field) => !body?.[field]?.trim?.());
+  if (missing.length > 0 || body.consent !== true) {
     return NextResponse.json(
       { error: "Missing or invalid required fields" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -75,53 +63,51 @@ export async function POST(request: Request) {
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
-    auth: {
-      user: FROM_EMAIL,
-      pass: appPassword,
-    },
+    auth: { user: FROM_EMAIL, pass: appPassword },
   });
 
   const text = buildEmailBody(body);
-  const subject = `Contact form: ${firstName} ${lastName} (${company})`;
+  const subject = `Get started: ${body.name} (${body.company})`;
 
   try {
     // Internal notification (to team, CC)
     await transporter.sendMail({
-      from: `"AdzzatLabs Contact" <${FROM_EMAIL}>`,
+      from: `"Adzzat Labs Enquiries" <${FROM_EMAIL}>`,
       to: FROM_EMAIL,
       cc: CC_EMAILS,
-      replyTo: email,
+      replyTo: body.email,
       subject,
       text,
     });
 
     // Confirmation email to the person who submitted the form
     await transporter.sendMail({
-      from: `"AdzzatLabs" <${FROM_EMAIL}>`,
-      to: email,
-      subject: "Thanks for reaching out to AdzzatLabs",
+      from: `"Adzzat Labs" <${FROM_EMAIL}>`,
+      to: body.email,
+      subject: "Thanks for reaching out to Adzzat Labs",
       text: [
-        `Hi ${firstName || "there"},`,
+        `Hi ${body.name || "there"},`,
         "",
-        "Thanks for contacting AdzzatLabs. We've received your details and someone from the team will follow up shortly.",
+        "Thanks for contacting Adzzat Labs. We've received your details and someone from the team will follow up shortly.",
         "",
         "Summary of what you shared:",
-        `• Name: ${firstName} ${lastName}`.trim(),
-        `• Company: ${company}`,
-        `• Email: ${email}`,
-        `• Mobile: ${mobile}`,
-        `• Engagement type: ${serviceType}`,
+        `• Name: ${body.name}`,
+        `• Company: ${body.company}`,
+        `• Role: ${body.role}`,
+        `• Email: ${body.email}`,
+        `• Current challenge: ${body.challenge}`,
+        ...(body.message ? [`• Message: ${body.message}`] : []),
         "",
         "If anything is missing or you'd like to share more context, you can simply reply to this email.",
         "",
-        "— AdzzatLabs team",
+        "— Adzzat Labs team",
       ].join("\n"),
     });
   } catch (err) {
     console.error("Contact email send failed:", err);
     return NextResponse.json(
       { error: "Failed to send notification email" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 

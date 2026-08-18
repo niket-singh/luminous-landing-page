@@ -1,70 +1,61 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display, Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import { LenisProvider } from "@/components/LenisProvider";
 import "./globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://adzzatlabs.com";
 const OG_IMAGE_PATH = "/og.png";
-const SITE_TITLE = "High-Paying Remote AI Training Jobs | Adzzat";
+const SITE_TITLE = "Expert Evaluation for Reliable AI — Adzzat Labs";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: SITE_TITLE,
   description:
-    "Expert-curated datasets for complex reasoning and agentic workflows. Pipeline-ready data for Y-Combinator backed labs—RLHF, SFT, agentic traces, and simulation environments. DPDP compliant.",
+    "Adzzat Labs is an applied research lab curating evaluation and routing solutions for frontier AI. We work with AI labs and enterprises to evaluate, improve and deploy AI models more reliably. Powered by Southeast Asia's largest expert contributor network.",
   keywords: [
-    "AI training data",
+    "AI evaluation",
+    "intelligent routing",
     "foundation models",
     "RLHF",
-    "agentic workflows",
-    "ML data",
-    "AdzzatLabs",
+    "model reliability",
+    "Adzzat Labs",
   ],
-  authors: [{ name: "AdzzatLabs" }],
+  authors: [{ name: "Adzzat Labs" }],
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "AdzzatLabs",
+    siteName: "Adzzat Labs",
     title: SITE_TITLE,
     description:
-      "Expert-curated datasets for complex reasoning and agentic workflows. Pipeline-ready data for YC-backed labs—RLHF, SFT, agentic traces, simulation. DPDP compliant.",
+      "Applied research lab curating evaluation and routing solutions for frontier AI. Powered by Southeast Asia's largest expert contributor network.",
     images: [
       {
         url: OG_IMAGE_PATH.startsWith("http") ? OG_IMAGE_PATH : `${SITE_URL}${OG_IMAGE_PATH}`,
         width: 1200,
         height: 630,
-        alt: "AdzzatLabs - Frontier AI Data",
+        alt: "Adzzat Labs — Expert evaluation for reliable AI",
       },
     ],
     locale: "en_IN",
@@ -73,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_TITLE,
     description:
-      "Expert-curated datasets for complex reasoning and agentic workflows. Pipeline-ready data for YC-backed labs. DPDP compliant.",
+      "Evaluation and routing infrastructure for reliable AI, powered by Southeast Asia's largest expert contributor network.",
     images: [OG_IMAGE_PATH.startsWith("http") ? OG_IMAGE_PATH : `${SITE_URL}${OG_IMAGE_PATH}`],
   },
   alternates: {
@@ -86,13 +77,39 @@ export const metadata: Metadata = {
   },
 };
 
+/*
+  Runs before first paint so the stored theme never flashes. Light is the
+  default; an explicit stored choice always wins over the OS preference.
+*/
+const THEME_BOOTSTRAP = `
+(() => {
+  try {
+    const saved = localStorage.getItem("theme");
+    const system = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const dark = saved ? saved === "dark" : system;
+    document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.style.colorScheme = dark ? "dark" : "light";
+  } catch (_) {}
+})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    /*
+      The font variables must live on <html>, not <body>: the theme's
+      --font-serif/--font-sans stacks are declared on :root and reference
+      --font-newsreader etc. A custom property is substituted on the element
+      that declares it, so defining the font vars lower down leaves those
+      stacks invalid and every heading silently falls back to the body font.
+    */
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${newsreader.variable} ${inter.variable} ${jetBrainsMono.variable}`}
+    >
       <head>
         {/* Favicons: light-mode gets dark/blue icon, dark-mode gets white icon */}
         <link rel="icon" href="/favicon-light.ico" sizes="any" media="(prefers-color-scheme: light)" />
@@ -104,31 +121,18 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" media="(prefers-color-scheme: dark)" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" media="(prefers-color-scheme: dark)" />
 
-        {/* Apply theme before paint (prevents flash) - defaults to dark */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-(() => {
-  try {
-    const saved = localStorage.getItem("theme");
-    const theme = saved || "dark";
-    if (theme === "dark") document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  } catch (_) {}
-})();`,
-          }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "AdzzatLabs",
+              name: "Adzzat Labs",
               url: SITE_URL,
               logo: `${SITE_URL}/adzzat-logo.png`,
               description:
-                "Expert-curated datasets for complex reasoning and agentic workflows. Pipeline-ready data for frontier AI labs.",
+                "Applied research lab curating evaluation and routing solutions for frontier AI, powered by Southeast Asia's largest expert contributor network.",
               sameAs: ["https://www.linkedin.com/company/adzzatlabs/"],
               contactPoint: {
                 "@type": "ContactPoint",
@@ -139,9 +143,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} antialiased dark overflow-x-hidden`}
-      >
+      <body className="overflow-x-hidden">
         <LenisProvider>
           {children}
           <ConsentBanner />

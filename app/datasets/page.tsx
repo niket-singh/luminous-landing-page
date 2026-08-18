@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DatasetsPage } from "@/components/revamp/DatasetsPage";
+import { DatasetsPage } from "@/components/datasets/DatasetsPage";
 
 export const metadata: Metadata = {
   title: "Robotics Dataset Catalogue | AdzzatLabs",

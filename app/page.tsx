@@ -1,4 +1,12 @@
-import { AdzzatLabsLandingPage } from "@/components/revamp/AdzzatLabsLandingPage";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { Footer } from "@/components/site/Footer";
+import { Hero } from "@/components/home/Hero";
+import { SocialProof } from "@/components/home/SocialProof";
+import { Problem } from "@/components/home/Problem";
+import { Solution } from "@/components/home/Solution";
+import { Research } from "@/components/home/Research";
+import { CareersBand } from "@/components/home/CareersBand";
+import { SITE_NAME } from "@/lib/site";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://adzzatlabs.com";
 
@@ -7,22 +15,23 @@ export default function Home() {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "AdzzatLabs",
+      name: SITE_NAME,
       url: SITE_URL,
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "AdzzatLabs frontier AI data pipelines",
+      name: "Adzzat Labs AI evaluation and routing infrastructure",
       provider: {
         "@type": "Organization",
-        name: "AdzzatLabs",
+        name: SITE_NAME,
         url: SITE_URL,
       },
       areaServed: "Global",
-      serviceType: "AI training data, RLHF, SFT, evaluation datasets, and agentic workflow traces",
+      serviceType:
+        "AI model evaluation, intelligent routing, human preference data, and RL environments",
       description:
-        "Expert-curated datasets for complex reasoning, alignment, agentic workflows, and model evaluation.",
+        "Expert evaluation and routing infrastructure for frontier foundation models, powered by Southeast Asia's largest contributor network.",
       url: SITE_URL,
     },
   ];
@@ -31,11 +40,18 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <AdzzatLabsLandingPage />
+      <SiteHeader />
+      <main>
+        <Hero />
+        <SocialProof />
+        <Problem />
+        <Solution />
+        <Research />
+        <CareersBand />
+      </main>
+      <Footer />
     </>
   );
 }
