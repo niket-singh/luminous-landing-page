@@ -8,8 +8,8 @@ export function CareersBand() {
       <Container>
         <Reveal>
           <Banner title="Careers" action={{ href: "/careers", label: "See open roles" }}>
-            We&rsquo;re hiring for engineering, operations, and research roles to help us accelerate
-            AI evaluation and deployment infrastructure. Join the team building reliable AI.
+            Engineering, operations and research roles are open. Come build the evaluation and
+            routing layer that production AI depends on.
           </Banner>
         </Reveal>
       </Container>

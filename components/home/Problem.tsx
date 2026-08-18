@@ -15,23 +15,25 @@ export function Problem() {
       <Container>
         <Reveal>
           <SectionHeading eyebrow="Problem">
-            AI researchers and enterprises are hitting walls with unreliable models and expensive
-            infrastructure.
+            Labs and enterprises are shipping models they cannot measure, at costs they cannot
+            justify.
           </SectionHeading>
 
           <div className="prose-block mt-8">
             <p>
-              Today&rsquo;s models can generate answers. But they struggle with real deployment.
-              Because real deployment isn&rsquo;t just outputs. It&rsquo;s reliability, cost, and
-              context. That knowledge doesn&rsquo;t exist in benchmarks &mdash; it lives inside
-              expert evaluation.
+              A model that scores well on a leaderboard can still fail the job. Production asks
+              harder questions: is this output trustworthy, at what unit cost, and under whose
+              definition of correct? A benchmark number answers none of them.
             </p>
-            <p>Expert evaluation has never been captured at scale. Until now.</p>
             <p>
-              The most valuable signal isn&rsquo;t synthetic data. It exists in how domain experts
-              evaluate &mdash; not just scores, but reasoning, judgment, and tradeoffs. We work with
-              specialists across Southeast Asia to capture that evaluation signal, then structure it
-              into infrastructure models can rely on.
+              The answers sit with practitioners, and nobody has collected them at scale.
+            </p>
+            <p>
+              Synthetic data cannot supply them either. What matters is the shape of a
+              specialist&rsquo;s reasoning: the tradeoffs weighed, the plausible answers rejected,
+              the judgment applied under real constraints. We work with domain experts across
+              Southeast Asia to record that reasoning and turn it into evaluation and routing
+              infrastructure you can build on.
             </p>
           </div>
         </Reveal>

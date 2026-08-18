@@ -20,15 +20,15 @@ export const FEATURED_POSTS: readonly Post[] = [
   {
     title: "How We Improved Model Reliability Through Expert Evaluation",
     description:
-      "How evaluation signal from domain specialists improved deployment reliability — and what it says about training models.",
+      "What changed when we graded model output against specialist judgment instead of benchmark scores, and how far the reliability gains carried into production.",
     kicker: "Blog",
     image: "/post-1.jpg",
     imageAlt: "A printed page covered in handwritten correction marks",
   },
   {
-    title: "Human expertise, reimagined",
+    title: "What experts know that benchmarks don't",
     description:
-      "Capturing how experts evaluate — turning real-world judgment into infrastructure models can rely on.",
+      "Specialists disagree with benchmark verdicts in predictable places. We mapped where, and what that disagreement is worth as training signal.",
     kicker: "Blog",
     image: "/post-2.jpg",
     imageAlt: "A hand annotating a printed page under hard directional light",
@@ -36,7 +36,7 @@ export const FEATURED_POSTS: readonly Post[] = [
   {
     title: "Building the Infrastructure for Reliable AI",
     description:
-      "Encoding domain-specific evaluation into forms machines can learn — so deployments work like real-world experts expect.",
+      "The engineering behind turning scattered domain review into evaluation and routing that a production system can actually depend on.",
     kicker: "Blog",
     image: "/post-3.jpg",
     imageAlt: "Rows of server racks receding down a narrow aisle",

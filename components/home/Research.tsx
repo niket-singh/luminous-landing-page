@@ -14,9 +14,9 @@ export function Research() {
             <div>
               <SectionHeading>Research</SectionHeading>
               <p className="t-body mt-6">
-                Our approach starts with research: where exactly do production models break down in
-                real professional contexts? Why do these failure modes persist? We take a proactive
-                stance &mdash; every domain has its own evaluation patterns.
+                We start from the failure, not the feature. Which tasks does a model quietly get
+                wrong once a specialist inspects the output, and why does that pattern survive
+                fine-tuning? Every domain breaks differently, so we study them separately.
               </p>
             </div>
             <TextLink href="/research">More research</TextLink>
